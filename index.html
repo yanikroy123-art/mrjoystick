@@ -3,124 +3,138 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>MR JOYSTICK - Loja Profissional</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-
-<style>
-body{margin:0;font-family:Poppins;background:#0b0b15;color:white}
-header{background:#121225;padding:15px;display:flex;justify-content:space-between;align-items:center}
-nav a{color:white;margin:0 10px;text-decoration:none;font-weight:500}
-.hero{padding:80px 20px;text-align:center;background:linear-gradient(45deg,#1a1a2e,#7209b7)}
-.hero h1{font-size:40px}
-.container{padding:40px}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px}
-.card{background:#151528;border-radius:15px;overflow:hidden;transition:.3s}
-.card:hover{transform:translateY(-8px);box-shadow:0 15px 30px rgba(0,0,0,.6)}
-.card img{width:100%;height:180px;object-fit:cover;background:#222}
-.card-content{padding:15px}
-.price{color:#00ffcc;font-weight:bold;font-size:18px}
-.btn-buy{display:block;margin-top:10px;background:#25D366;color:white;text-align:center;padding:12px;border-radius:10px;text-decoration:none;font-weight:bold}
-.btn-buy:hover{background:#1ebe5d}
-.filter{margin-bottom:20px}
-.filter button{margin:5px;padding:8px 12px;border:none;border-radius:8px;background:#7209b7;color:white;cursor:pointer}
-.filter button:hover{background:#560bad}
-footer{background:#121225;text-align:center;padding:20px}
-</style>
+<title>MR JOYSTICK — Loja Profissional</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-<h2>MR JOYSTICK</h2>
-<nav>
-<a href="#produtos">Produtos</a>
-<a href="#contato">Contato</a>
-</nav>
+  <div class="logo">
+    MR JOYSTICK
+    <span>MAPUTO · MOÇAMBIQUE</span>
+  </div>
+  <nav>
+    <a href="#produtos" class="main-only">Produtos</a>
+    <a href="#reparacao" class="main-only">Reparação</a>
+    <a href="#contato" class="main-only">Contato</a>
+    <button class="extras-nav-btn" onclick="toggleExtras()" id="extras-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+      Mais Produtos
+    </button>
+    <a href="https://wa.me/258876709289" class="nav-cta" target="_blank">WhatsApp</a>
+  </nav>
 </header>
 
-<section class="hero">
-<h1>VENDA E REPARACAO</h1>
-<p>Compra rápida • Produtos originais • Entrega segura</p>
-</section>
+<div id="page-main">
 
-<section id="produtos" class="container">
-<h2>Produtos</h2>
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-glow2"></div>
+    <div class="hero-content">
+      <div class="hero-badge">LOJA OFICIAL</div>
+      <h1>
+        <span class="line1">VENDA &</span>
+        <span class="line2">REPARAÇÃO</span>
+      </h1>
+      <p class="hero-sub">Controles originais para PlayStation e Xbox</p>
+      <div class="hero-pills">
+        <span class="pill">✓ Produtos Originais</span>
+        <span class="pill">✓ Entrega Segura</span>
+        <span class="pill">✓ Garantia</span>
+      </div>
+    </div>
+  </section>
 
-<div class="filter">
-<button onclick="filtrar('all')">Todos</button>
-<button onclick="filtrar('ps')">PlayStation</button>
-<button onclick="filtrar('xbox')">Xbox</button>
-</div>
+  <section id="produtos">
+    <div class="section">
+      <div class="section-title">Produtos</div>
+      <div class="section-line"></div>
+      <div class="filters">
+        <button class="filter-btn active" onclick="filtrar('all', this)">Todos</button>
+        <button class="filter-btn" onclick="filtrar('ps', this)">PlayStation</button>
+        <button class="filter-btn" onclick="filtrar('xbox', this)">Xbox</button>
+      </div>
+      <div class="card-grid" id="lista">
 
-<div class="card-grid" id="lista">
+        <div class="card" data-cat="ps">
+          <img class="card-img" src="WhatsApp Image 2026-04-23 at 23.48.47.jpeg" alt="PS5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="card-img-placeholder" style="display:none;">🎮</div>
+          <span class="card-badge">NOVO</span>
+          <div class="card-body">
+            <span class="card-tag">PLAYSTATION 5</span>
+            <h3>DualSense PS5</h3>
+            <div class="card-footer">
+              <div class="price">4000 <sub>MT</sub></div>
+              <a href="#" onclick="comprar('DualSense PS5 — 4000MT'); return false;" class="btn-buy">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
 
-<div class="card" data-cat="ps">
-<img src="WhatsApp Image 2026-04-23 at 23.48.47.jpeg" alt="PS5">
-<div class="card-content">
-<h3>Joystick PS5</h3>
-<p class="price">4000 MT</p>
-<a href="#" onclick="comprar('Joystick PS5 - 4000MT')" class="btn-buy">Comprar</a>
-</div>
-</div>
+        <div class="card" data-cat="ps">
+          <img class="card-img" src="WhatsApp Image 2026-04-23 at 23.48.47 (2).jpeg" alt="PS4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="card-img-placeholder" style="display:none;">🎮</div>
+          <div class="card-body">
+            <span class="card-tag">PLAYSTATION 4</span>
+            <h3>DualShock 4</h3>
+            <div class="card-footer">
+              <div class="price">1800 <sub>MT</sub></div>
+              <a href="#" onclick="comprar('DualShock PS4 — 1800MT'); return false;" class="btn-buy">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
 
-<div class="card" data-cat="ps">
-<img src="WhatsApp Image 2026-04-23 at 23.48.47 (2).jpeg" alt="PS4">
-<div class="card-content">
-<h3>Joystick PS4</h3>
-<p class="price">1800 MT</p>
-<a href="#" onclick="comprar('Joystick PS4 - 1800MT')" class="btn-buy">Comprar</a>
-</div>
-</div>
+        <div class="card" data-cat="ps">
+          <img class="card-img" src="WhatsApp Image 2026-04-23 at 23.48.47 (1).jpeg" alt="PS3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="card-img-placeholder" style="display:none;">🎮</div>
+          <span class="card-badge" style="background:#0ea5e9;">OFERTA</span>
+          <div class="card-body">
+            <span class="card-tag">PLAYSTATION 3</span>
+            <h3>DualShock 3</h3>
+            <div class="card-footer">
+              <div class="price">500 <sub>MT</sub></div>
+              <a href="#" onclick="comprar('DualShock PS3 — 500MT'); return false;" class="btn-buy">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
 
-<div class="card" data-cat="ps">
-<img src="WhatsApp Image 2026-04-23 at 23.48.47 (1).jpeg" alt="PS3">
-<div class="card-content">
-<h3>Joystick PS3</h3>
-<p class="price">500 MT</p>
-<a href="#" onclick="comprar('Joystick PS3 - 500MT')" class="btn-buy">Comprar</a>
-</div>
-</div>
+        <div class="card" data-cat="xbox">
+          <img class="card-img" src="WhatsApp Image 2026-04-24 at 00.13.29.jpeg" alt="Xbox" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="card-img-placeholder" style="display:none;">🎮</div>
+          <span class="card-badge" style="background:#16a34a;">NOVO</span>
+          <div class="card-body">
+            <span class="card-tag">XBOX SERIES</span>
+            <h3>Controller Xbox Series X/S</h3>
+            <div class="card-footer">
+              <div class="price">3500 <sub>MT</sub></div>
+              <a href="#" onclick="comprar('Controller Xbox Series — 3500MT'); return false;" class="btn-buy">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+                Comprar
+              </a>
+            </div>
+          </div>
+        </div>
 
-<div class="card" data-cat="xbox">
-<img src="WhatsApp Image 2026-04-24 at 00.13.29.jpeg" alt="Xbox">
-<div class="card-content">
-<h3>Joystick Xbox Series</h3>
-<p class="price">3500 MT</p>
-<a href="#" onclick="comprar('Xbox One - 3500MT')" class="btn-buy">Comprar</a>
-</div>
-</div>
+      </div>
+    </div>
+  </section>
 
-</div>
-</section>
-
-<section id="contato" class="container">
-<h2>Contato</h2>
-<p>WhatsApp: +258 87 670 9289</p>
-</section>
-
-<footer>
-<p>© MR JOYSTICK</p>
-</footer>
-
-<script>
-function comprar(produto){
- let numero = "258876709289";
- let mensagem = `Olá, quero comprar: ${produto}`;
- let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
- window.open(url, '_blank');
-}
-
-function filtrar(cat){
- let cards = document.querySelectorAll('.card');
- cards.forEach(c => {
-  if(cat === 'all' || c.dataset.cat === cat){
-    c.style.display = 'block';
-  } else {
-    c.style.display = 'none';
-  }
- });
-}
-</script>
-
-</body>
-</html>
+  <section id="reparacao">
+    <div class="section">
+      <div class="section-title">Reparação</div>
+      <div class="section-line"></div>
+      <div class="repair-banner">
+        <div class="repair-text">
+          <h2>O seu controle<br>avariou? Nós reparamos.</h2>
+          <p>Oferecemos serviço de reparação profissional para joysticks PlayStation e Xbox. Analogs, botões, carga — resolvemos tudo com rapidez e qualidade.</p>
+          <a href="https://wa.me/258876709289?text=Olá%2C%20preciso%20de%20reparação%20de%20controle." target="_blank" class="btn-buy" style="margin-top:24px;max-width:220px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13
