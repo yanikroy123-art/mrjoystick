@@ -4,26 +4,34 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>MR JOYSTICK - Loja Profissional</title>
-<link rel="stylesheet" href="styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
 <style>
-body{margin:0;font-family:Segoe UI;background:#0f0f1a;color:white}
-header{background:#1a1a2e;padding:15px}
-nav a{color:white;margin:0 15px;text-decoration:none}
-.hero{padding:60px;text-align:center;background:linear-gradient(45deg,#1a1a2e,#3a0ca3)}
+body{margin:0;font-family:Poppins;background:#0b0b15;color:white}
+header{background:#121225;padding:15px;display:flex;justify-content:space-between;align-items:center}
+nav a{color:white;margin:0 10px;text-decoration:none;font-weight:500}
+.hero{padding:80px 20px;text-align:center;background:linear-gradient(45deg,#1a1a2e,#7209b7)}
+.hero h1{font-size:40px}
 .container{padding:40px}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card{background:#1f1f2e;border-radius:12px;overflow:hidden;transition:0.3s}
-.card:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.5)}
-.card img{width:100%;height:180px;object-fit:cover}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:25px}
+.card{background:#151528;border-radius:15px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-8px);box-shadow:0 15px 30px rgba(0,0,0,.6)}
+.card img{width:100%;height:180px;object-fit:cover;background:#222}
 .card-content{padding:15px}
-.btn-buy{display:block;margin-top:10px;background:#25D366;color:white;text-align:center;padding:10px;border-radius:8px;text-decoration:none}
-footer{background:#1a1a2e;text-align:center;padding:20px}
+.price{color:#00ffcc;font-weight:bold;font-size:18px}
+.btn-buy{display:block;margin-top:10px;background:#25D366;color:white;text-align:center;padding:12px;border-radius:10px;text-decoration:none;font-weight:bold}
+.btn-buy:hover{background:#1ebe5d}
+.filter{margin-bottom:20px}
+.filter button{margin:5px;padding:8px 12px;border:none;border-radius:8px;background:#7209b7;color:white;cursor:pointer}
+.filter button:hover{background:#560bad}
+footer{background:#121225;text-align:center;padding:20px}
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>MR JOYSTICK</h1>
+<h2>MR JOYSTICK</h2>
 <nav>
 <a href="#produtos">Produtos</a>
 <a href="#contato">Contato</a>
@@ -31,38 +39,54 @@ footer{background:#1a1a2e;text-align:center;padding:20px}
 </header>
 
 <section class="hero">
-<h1>Joysticks & Consolas</h1>
-<p>Qualidade profissional • Entrega rápida • Melhor preço</p>
+<h1>VENDA E REPARACAO</h1>
+<p>Compra rápida • Produtos originais • Entrega segura</p>
 </section>
 
 <section id="produtos" class="container">
 <h2>Produtos</h2>
-<div class="card-grid">
 
-<div class="card">
+<div class="filter">
+<button onclick="filtrar('all')">Todos</button>
+<button onclick="filtrar('ps')">PlayStation</button>
+<button onclick="filtrar('xbox')">Xbox</button>
+</div>
+
+<div class="card-grid" id="lista">
+
+<div class="card" data-cat="ps">
 <img src="WhatsApp Image 2026-04-23 at 23.48.47.jpeg" alt="PS5">
 <div class="card-content">
 <h3>Joystick PS5</h3>
-<p>4000 MT</p>
-<a href="https://wa.me/258876709289" class="btn-buy">Comprar</a>
+<p class="price">4000 MT</p>
+<a href="#" onclick="comprar('Joystick PS5 - 4000MT')" class="btn-buy">Comprar</a>
 </div>
 </div>
 
-<div class="card">
+<div class="card" data-cat="ps">
 <img src="WhatsApp Image 2026-04-23 at 23.48.47 (2).jpeg" alt="PS4">
 <div class="card-content">
 <h3>Joystick PS4</h3>
-<p>1800 MT</p>
-<a href="https://wa.me/258876709289" class="btn-buy">Comprar</a>
+<p class="price">1800 MT</p>
+<a href="#" onclick="comprar('Joystick PS4 - 1800MT')" class="btn-buy">Comprar</a>
 </div>
 </div>
 
-<div class="card">
+<div class="card" data-cat="ps">
 <img src="WhatsApp Image 2026-04-23 at 23.48.47 (1).jpeg" alt="PS3">
 <div class="card-content">
 <h3>Joystick PS3</h3>
-<p>500 MT</p>
-<a href="https://wa.me/258876709289" class="btn-buy">Comprar</a>
+<p class="price">500 MT</p>
+<a href="#" onclick="comprar('Joystick PS3 - 500MT')" class="btn-buy">Comprar</a>
+</div>
+</div>
+
+<div class="card" data-cat="xbox">
+<img src="WhatsApp Image 2026-04-24 at 00.13.29.jpeg" alt="Xbox">
+<div class="card-content">
+<h3>Joystick Xbox Series</h3>
+<p class="price">3500 MT</p>
+<a href="#" onclick="comprar('Xbox One - 3500MT')" class="btn-buy">Comprar</a>
 </div>
 </div>
 
@@ -71,12 +95,32 @@ footer{background:#1a1a2e;text-align:center;padding:20px}
 
 <section id="contato" class="container">
 <h2>Contato</h2>
-<p>WhatsApp: +258 87 670 9289 </p>
+<p>WhatsApp: +258 87 670 9289</p>
 </section>
 
 <footer>
 <p>© MR JOYSTICK</p>
 </footer>
+
+<script>
+function comprar(produto){
+ let numero = "258876709289";
+ let mensagem = `Olá, quero comprar: ${produto}`;
+ let url = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+ window.open(url, '_blank');
+}
+
+function filtrar(cat){
+ let cards = document.querySelectorAll('.card');
+ cards.forEach(c => {
+  if(cat === 'all' || c.dataset.cat === cat){
+    c.style.display = 'block';
+  } else {
+    c.style.display = 'none';
+  }
+ });
+}
+</script>
 
 </body>
 </html>
