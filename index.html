@@ -1,137 +1,82 @@
 <!doctype html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MR JOYSTICK - Vendas & Reparações</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MR JOYSTICK - Loja Profissional</title>
+<link rel="stylesheet" href="styles.css" />
+<style>
+body{margin:0;font-family:Segoe UI;background:#0f0f1a;color:white}
+header{background:#1a1a2e;padding:15px}
+nav a{color:white;margin:0 15px;text-decoration:none}
+.hero{padding:60px;text-align:center;background:linear-gradient(45deg,#1a1a2e,#3a0ca3)}
+.container{padding:40px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#1f1f2e;border-radius:12px;overflow:hidden;transition:0.3s}
+.card:hover{transform:translateY(-5px);box-shadow:0 10px 20px rgba(0,0,0,0.5)}
+.card img{width:100%;height:180px;object-fit:cover}
+.card-content{padding:15px}
+.btn-buy{display:block;margin-top:10px;background:#25D366;color:white;text-align:center;padding:10px;border-radius:8px;text-decoration:none}
+footer{background:#1a1a2e;text-align:center;padding:20px}
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="index.html">MR JOYSTICK</a>
-    <nav class="nav">
-      <a href="#produtos">Produtos</a>
-      <a href="#reparacoes">Reparações</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato" class="btn-primary">Contato</a>
-    </nav>
-  </div>
+<header>
+<h1>MR JOYSTICK</h1>
+<nav>
+<a href="#produtos">Produtos</a>
+<a href="#contato">Contato</a>
+</nav>
 </header>
 
-<main>
-
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <h1>Venda e Reparação Profissional de Joysticks</h1>
-      <p>Peças originais, técnicos especializados e garantia. Venda online e serviço rápido.</p>
-      <a href="#produtos" class="btn-secondary">Ver Produtos</a>
-    </div>
-  </div>
+<h1>Joysticks & Consolas</h1>
+<p>Qualidade profissional • Entrega rápida • Melhor preço</p>
 </section>
 
-<!-- PRODUTOS (AGORA COMPLETO, NÃO "DESTAQUE") -->
-<section id="produtos" class="container section">
-  <h2>Produtos</h2>
+<section id="produtos" class="container">
+<h2>Produtos</h2>
+<div class="card-grid">
 
-  <div class="card-grid">
+<div class="card">
+<img src="WhatsApp Image 2026-04-23 at 23.48.47.jpeg" alt="PS5">
+<div class="card-content">
+<h3>Joystick PS5</h3>
+<p>4000 MT</p>
+<a href="https://wa.me/258840000000" class="btn-buy">Comprar</a>
+</div>
+</div>
 
-    <div class="card">
-      <!-- COLOQUE SUA IMAGEM AQUI -->
-      <img src="WhatsApp Image 2026-04-23 at 23.48.47.jpeg" alt="PS5 Joystick">
-      <div class="card-content">
-        <h3>Joystick PS5</h3>
-        <p>4000 MT</p>
-      </div>
-    </div>
+<div class="card">
+<img src="WhatsApp Image 2026-04-23 at 23.48.47 (2).jpeg" alt="PS4">
+<div class="card-content">
+<h3>Joystick PS4</h3>
+<p>1800 MT</p>
+<a href="https://wa.me/258840000000" class="btn-buy">Comprar</a>
+</div>
+</div>
 
-    <div class="card">
-      <!-- COLOQUE SUA IMAGEM AQUI -->
-      <img src="WhatsApp Image 2026-04-23 at 23.48.47 (1).jpeg" alt="PS4 Joystick">
-      <div class="card-content">
-        <h3>Joystick PS4</h3>
-        <p>1800 MT</p>
-      </div>
-    </div>
+<div class="card">
+<img src="WhatsApp Image 2026-04-23 at 23.48.47 (1).jpeg" alt="PS3">
+<div class="card-content">
+<h3>Joystick PS3</h3>
+<p>500 MT</p>
+<a href="https://wa.me/258840000000" class="btn-buy">Comprar</a>
+</div>
+</div>
 
-    <div class="card">
-      <!-- COLOQUE SUA IMAGEM AQUI -->
-      <img src="WhatsApp Image 2026-04-23 at 23.48.47 (2).jpeg" alt="PS3 Joystick">
-      <div class="card-content">
-        <h3>Joystick PS3</h3>
-        <p>500 MT</p>
-      </div>
-    </div>
-
-  </div>
+</div>
 </section>
 
-<section id="reparacoes" class="container section dark">
-  <h2>Reparações & Serviços</h2>
-  <div class="services-grid">
-    <div class="card">
-      <h3>Calibração & Joystick Drift</h3>
-      <p>Diagnóstico 100MT, substituição de potenciômetros e calibração profissional.</p>
-    </div>
-    <div class="card">
-      <h3>Substituição de Buttons</h3>
-      <p>Troca rápida com garantia de 30 dias.</p>
-    </div>
-    <div class="card">
-      <h3>Reparos Eletrônicos</h3>
-      <p>Recuperação de placas e componentes.</p>
-    </div>
-  </div>
+<section id="contato" class="container">
+<h2>Contato</h2>
+<p>WhatsApp: +258 87 670 9289 </p>
 </section>
 
-<section id="sobre" class="container section">
-  <h2>Sobre a MR JOYSTICK</h2>
-  <p>Somos especializados em controles de jogos com qualidade e confiança.</p>
-</section>
-
-<section id="contato" class="container section dark">
-  <h2>Contato</h2>
-  <p>WhatsApp: +258 87 670 9289</p>
-</section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <p>© MR JOYSTICK — Todos os direitos reservados</p>
-  </div>
+<footer>
+<p>© MR JOYSTICK</p>
 </footer>
-
-<!-- SISTEMA SIMPLES DE PRODUTOS (SEM MEXER NO CÓDIGO) -->
-<script>
-// carregar produtos do localStorage
-const lista = document.querySelector('.card-grid');
-let produtos = JSON.parse(localStorage.getItem('produtos')) || [];
-
-// mostrar produtos
-function mostrarProdutos(){
-  if(produtos.length === 0) return;
-  lista.innerHTML = '';
-
-  produtos.forEach(p => {
-    let div = document.createElement('div');
-    div.className = 'card';
-    div.innerHTML = `
-      <img src="${p.imagem}" alt="${p.nome}">
-      <div class="card-content">
-        <h3>${p.nome}</h3>
-        <p>${p.preco}</p>
-      </div>
-    `;
-    lista.appendChild(div);
-  });
-}
-
-mostrarProdutos();
-</script>
 
 </body>
 </html>
